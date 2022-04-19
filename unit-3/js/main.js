@@ -5,7 +5,6 @@
 	var attrArray = ["Murder", "Rape", "Robbery", "AggravatedAssault", "Burglary","LarcenyTheft","MotorVehicleTheft","Arson","HumanTrafficking"]; //list of attributes
 	var expressed = attrArray[0]; //initial attribute
 
-
 	//begin script when window loads
 	window.onload = setMap();
 
@@ -73,6 +72,9 @@
 	        //add coordinated visualization to the map
         	setChart(csvData, colorScale);
 
+            //add dropdown
+            createDropdown(csvData);
+
 	    };
 
 	    
@@ -125,7 +127,7 @@
 	        };
 	        return arizonaRegions;
 	}
-
+    //
 	function makeColorScale(data){
 		var colorClasses = [
 	        "#fef0d9",
@@ -257,6 +259,38 @@ function setChart(csvData, colorScale){
 
 
 };
+
+//function to create a dropdown menu for attribute selection
+function createDropdown(csvData) {
+    //add select element
+    var dropdown = d3
+        .select("body")
+        .append("select")
+        .attr("class", "dropdown")
+        .on("change", function () {
+            changeAttribute(this.value, csvData);
+        });
+
+    //add initial option
+    var titleOption = dropdown
+        .append("option")
+        .attr("class", "titleOption")
+        .attr("disabled", "true")
+        .text("Select Attribute");
+
+    //add attribute name options
+    var attrOptions = dropdown
+        .selectAll("attrOptions")
+        .data(attrArray)
+        .enter()
+        .append("option")
+        .attr("value", function (d) {
+            return d;
+        })
+        .text(function (d) {
+            return d;
+        });
+}
 
 })();
 
