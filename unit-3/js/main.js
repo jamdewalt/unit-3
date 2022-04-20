@@ -1,4 +1,4 @@
-//This program creates a map of Arizona Crime Data in 2019 using D3. Data sources for this project are located in the readme.md file
+//This program creates a map of Arizona Crime Data in 2019 using D3. Data sources for this project are located in the readme.md file.
 (function () {
     //pseudo-global variables
     var attrArray = ["Murders","Rapes","Robberies","Aggravated Assaults","Burglaries","Larceny Thefts","Motor Vehicle Thefts","Arsons","Human Trafficking Cases"]; //list of attributes
