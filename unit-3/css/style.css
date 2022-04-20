@@ -3,15 +3,7 @@
     text-transform: capitalize;
     text-align: center;
   }
-  .two h1:before {
-    position: absolute;
-    right: 650px;;
-    top: 70px;
-    width: 80px;
-    height: 2px;
-    content: "";
-    background-color: #c50000;
-  }
+ 
   
   .two h1 span {
     font-size: 13px;
@@ -122,12 +114,8 @@ option {
     font-weight: normal;
 }
 
-
 /*Example 2.11*/
-
-.infolabel {
-    margin: 0 20px 0 0;
-    position: absolute;
+.infolabel {    margin: 0 20px 0 0;    position: absolute;
     height: 50px;
     min-width: 100px;
     color: #fff;
@@ -136,3 +124,10 @@ option {
     padding: 5px 10px;
     top: -75px;
 }
+.infolabel h1 {
+    margin: 0 20px 0 0;
+    padding: 0;
+    display: inline-block;
+    line-height: 1em;
+}
+
